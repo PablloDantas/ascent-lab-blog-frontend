@@ -4,11 +4,3 @@
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        - APP_UID=1000
-    ports:
-      - "8080:8080"
-      - "8081:8081"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:8080;https://+:8081
