@@ -1,0 +1,99 @@
+﻿<style>
+    /* From Uiverse.io by kleenpulse */
+    .rainbow-button {
+        --border-color: linear-gradient(-45deg,
+        #ff2100,
+        #fc8613,
+        #ffd480);
+        --border-width: 0.125em;
+        --curve-size: 0.5em;
+        --blur: 30px;
+        --bg: var(--c1);
+        --color: var(--c3);
+        color: var(--c3);
+        cursor: pointer;
+        /* use position: relative; so that BG is only for .rainbow-button */
+        position: relative;
+        isolation: isolate;
+        display: inline-grid;
+        place-content: center;
+        padding: 0.5em 1.5em;
+        font-size: 1.5rem;
+        font-family: "Roboto Mono", monospace !important;
+        border: 0;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+        clip-path: polygon(
+            /* Top-left */ 0% var(--curve-size),
+            var(--curve-size) 0,
+                /* top-right */ 100% 0,
+            100% calc(100% - var(--curve-size)),
+                /* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
+                /* bottom-right 2 */ 0 100%
+        );
+        transition: color 250ms;
+    }
+
+    .rainbow-button::after,
+    .rainbow-button::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+    }
+
+    .rainbow-button::before {
+        background: var(--border-color);
+        background-size: 300% 300%;
+        animation: move-bg7234 5s ease infinite;
+        z-index: -2;
+    }
+
+    @@keyframes move-bg7234 {
+        0% {
+            background-position: 31% 0%;
+        }
+
+        50% {
+            background-position: 70% 100%;
+        }
+
+        100% {
+            background-position: 31% 0%;
+        }
+    }
+
+    .rainbow-button::after {
+        background: var(--bg);
+        z-index: -1;
+        clip-path: polygon(
+            /* Top-left */ var(--border-width) calc(var(--curve-size) + var(--border-width) * 0.5),
+            calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+                /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+            calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+                /* bottom-right 1 */ calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+                /* bottom-right 2 */ var(--border-width) calc(100% - var(--border-width))
+        );
+        transition: clip-path 500ms;
+    }
+
+    .rainbow-button:where(:hover, :focus)::after {
+        clip-path: polygon(
+            /* Top-left */ calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+            calc(100% - var(--border-width)) var(--border-width),
+                /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+            calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+                /* bottom-right 1 */ calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+                /* bottom-right 2 */ calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width))
+        );
+        transition: 200ms;
+    }
+
+    .rainbow-button:where(:hover, :focus) {
+        color: #fff;
+    }
+</style>
+
+@model RainbowButton
+
+<button class="rainbow-button">
+    @Model.Text
+</button>

@@ -8,4 +8,9 @@
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
+    <ItemGroup>
+        <_ContentIncludedByDefault Remove="Pages\Shared\Components\Icons\AscentIconPartial.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\Components\Icons\Search.cshtml"/>
+    </ItemGroup>
+
 </Project>

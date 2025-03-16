@@ -1,0 +1,10 @@
+* {
+    font-family: 'Violet Sans', 'Roboto', sans-serif;
+    color: var(--c3);
+}
+
+
+body {
+    background-color: var(--c1);
+}
+
