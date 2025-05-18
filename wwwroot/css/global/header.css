@@ -1,15 +1,16 @@
 .header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid var(--c6)
+    border-bottom: 1px solid var(--c6-transparent);
 }
 
 .ascent-logo {
     align-content: center;
     max-width: 350px;
+    min-width: 200px;
     width: 100%;
     padding: 30px;
-    border-right: 1px solid var(--c6);
+    border-right: 1px solid var(--c6-transparent);
 }
 
 .nav-list {
@@ -19,8 +20,7 @@
 
 .nav-list li {
     align-content: center;
-    padding: 0px 2rem;
-    border-left: 1px solid var(--c6);
+    padding: 0 2rem;
 }
 
 .nav-list li:first-child {

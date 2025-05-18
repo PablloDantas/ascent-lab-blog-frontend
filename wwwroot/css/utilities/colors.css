@@ -5,6 +5,8 @@
     --c4: #FFD131;
     --c5: #FF7F17;
     --c6: #7f7f7f;
+    --c6-transparent: color-mix(in srgb, var(--c6) 30%, transparent);
+    --c7: #000000;
 }
 
 .c1 {
@@ -25,4 +27,16 @@
 
 .c5 {
     color: var(--c5);
+}
+
+.c6 {
+    color: var(--c6);
+}
+
+.c6-transparent {
+    color: var(--c6-transparent);
+}
+
+.c7 {
+    color: var(--c7);
 }

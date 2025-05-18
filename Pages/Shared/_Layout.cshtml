@@ -1,5 +1,4 @@
 ﻿@using ascent_lab_blog_frontend.Pages.Components.Buttons
-@using Microsoft.AspNetCore.Mvc.TagHelpers
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -38,10 +37,12 @@
                         <a class="f-menu-item" asp-page="Community">Comunidade</a>
                     </li>
                     <li>
-                        <a class="f-menu-item" asp-page="Contact">Contato</a>
+                        <a class="f-menu-item" asp-page="Contact">Contatos</a>
                     </li>
                     <li>
-                        @await Html.PartialAsync("~/Pages/Components/Buttons/RainbowButton.cshtml", new RainbowButton { Text = "Entrar" })
+                        <div class="button-borders">
+                            @await Html.PartialAsync("~/Pages/Components/Buttons/Button.cshtml", new Button { Text = "Entrar" })
+                        </div> 
                     </li>
                 </ul>
             </div>
