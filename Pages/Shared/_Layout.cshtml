@@ -5,60 +5,59 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - ascent_lab_blog_frontend</title>
-    <script type="importmap"></script>
+    <script type="import"></script>
 </head>
 <body>
-
-<header class="header-bg">
-    <div class="header container">
-
-        <div class="ascent-logo">
-            <a asp-page="Index">
-                <img src="~/assets/logos/ascent-lab.svg" alt="Ascent.Lab Logo"/>
-            </a>
-        </div>
-
-        <nav>
-            <div class="nav container">
-                <ul class="nav-list">
-                    <li>
-                        <img class="search-button" src="~/assets/icons/search.svg" alt="Botão de Pesquisa"/>
-                    </li>
-                    <li>
-                        <a class="f-menu-item" asp-page="Articles">Artigos</a>
-                    </li>
-                    <li>
-                        <a class="f-menu-item" asp-page="News">Notícias</a>
-                    </li>
-                    <li>
-                        <a class="f-menu-item" asp-page="Guides">Guias</a>
-                    </li>
-                    <li>
-                        <a class="f-menu-item" asp-page="Community">Comunidade</a>
-                    </li>
-                    <li>
-                        <a class="f-menu-item" asp-page="Contact">Contatos</a>
-                    </li>
-                    <li>
-                        <div class="button-borders">
-                            @await Html.PartialAsync("~/Pages/Components/Buttons/Button.cshtml", new Button { Text = "Entrar" })
-                        </div> 
-                    </li>
-                </ul>
+<div class="body container">
+    <header class="header-bg">
+        <div class="header container">
+            <div class="ascent-logo">
+                <a asp-page="Index">
+                    <img src="~/assets/logos/ascent-lab.svg" alt="Ascent.Lab Logo"/>
+                </a>
             </div>
-        </nav>
-
-    </div>
-</header>
-
-
-<main>
-    @RenderBody()
-</main>
-
-<footer>
-
-</footer>
-
+            <nav>
+                <div class="nav container">
+                    <ul class="nav-list">
+                        <li class="active-item">
+                            <a class="f-menu-item" asp-page="Articles">Ecossistema</a>
+                        </li>
+                        <li>
+                            <a class="f-menu-item" asp-page="Articles">Artigos</a>
+                        </li>
+                        <li>
+                            <a class="f-menu-item" asp-page="News">Notícias</a>
+                        </li>
+                        <li>
+                            <a class="f-menu-item" asp-page="Guides">Guias</a>
+                        </li>
+                        <li>
+                            <a class="f-menu-item" asp-page="Community">Comunidade</a>
+                        </li>
+                        <li>
+                            <a class="f-menu-item" asp-page="Contact">Contatos</a>
+                        </li>
+                        <li>
+                            <img class="search-button" src="~/assets/icons/search.svg" alt="Botão de Pesquisa"/>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="header-button container">
+                @await Html.PartialAsync("~/Pages/Components/Buttons/MainButton.cshtml", new MainButton { Text = "Entrar" })
+            </div>
+        </div>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer class="footer-bg">
+        <div class="footer container">
+            <span>EU SOU O FOOTER, TODOS OS DIREITOS RESERVADOS A ASCENT, 2025.</span>
+        </div>
+    </footer>
+    <div class="vertical-line left-line"></div>
+    <div class="vertical-line right-line"></div>
+</div>
 </body>
 </html>

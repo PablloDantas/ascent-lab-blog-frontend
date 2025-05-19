@@ -1,30 +1,41 @@
+header {
+    grid-area: header;
+}
+
 .header {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--c6-transparent);
+    display: grid;
+    border-bottom: 1px solid var(--c8);
+    grid-template-areas: "ascent-logo nav-list header-button";
+    grid-template-columns: 1fr  4fr 1fr;
+    grid-template-rows: auto;
 }
 
 .ascent-logo {
-    align-content: center;
-    max-width: 350px;
-    min-width: 200px;
+    padding: 20px 40px;
+    grid-area: ascent-logo;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.ascent-logo img {
     width: 100%;
-    padding: 30px;
-    border-right: 1px solid var(--c6-transparent);
+    max-width: 250px;
+    min-width: 180px;
+    height: auto;
 }
 
 .nav-list {
     display: flex;
-    height: 100%;
+    justify-content: space-evenly;
+    height: 100px;
+    grid-area: nav-list;
 }
 
 .nav-list li {
+    width: 100%;
     align-content: center;
     padding: 0 2rem;
-}
-
-.nav-list li:first-child {
-    border-left: none;
 }
 
 .search-button {
@@ -32,3 +43,30 @@
     height: auto;
 }
 
+.header-button {
+    display: grid;
+    padding: 0 40px;
+    place-items: center;
+}
+
+.active-item {
+    position: relative;
+    border-right: 1px solid var(--c8);
+
+}
+
+.active-item:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(45deg,
+    #ff4500,
+    #ff5a00,
+    #ff7300,
+    #ff8c00,
+    #ffa500
+    );
+}

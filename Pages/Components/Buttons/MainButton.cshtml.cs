@@ -2,7 +2,7 @@
 
 namespace ascent_lab_blog_frontend.Pages.Components.Buttons;
 
-public class Button : PageModel
+public class MainButton : PageModel
 {
     public object Text { get; set; }
 
